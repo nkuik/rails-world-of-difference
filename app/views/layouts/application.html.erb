@@ -10,19 +10,24 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
-      <div class="banner">
+    <div class="banner">
 
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
-        <%= yield %>
-        <%= javascript_include_tag 'application' %>
-      </div>
-     <div> <%= render "shared/new_nav" %> </div>
-      <div class="containter">
-        <%= render "shared/card" %>
-      </div>
+      <%= yield %>
+      <%= javascript_include_tag 'application' %>
+    </div>
+    <div> <%= render "shared/new_nav" %> </div>
+    <div class="containter">
+      <%= render "shared/card" %>
+    </div>
 
 
+    <%= render 'shared/flashes' %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>
