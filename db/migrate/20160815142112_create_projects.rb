@@ -4,7 +4,7 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :description
       t.boolean :complete
-      t.integer :author_id
+      t.references :author
 
       t.timestamps
     end
