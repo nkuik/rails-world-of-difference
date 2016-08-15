@@ -1,0 +1,8 @@
+
+      <h1><%= @project.name %></h1>
+      <h1><%= @project.description %></h1>
+
+
+
+<%= link_to 'See all projects', projects_path, class:"btn" %>
+<%= link_to 'Delete this project', project_path(@project), method: :delete, class:"btn" %>
