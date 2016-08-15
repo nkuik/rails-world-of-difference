@@ -5,3 +5,46 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Skill.destroy_all
+
+skills_attributes = [
+  {
+    name:         "Project Development",
+  },
+  {
+    name:         "Coaching and Facilitation",
+  },
+  {
+    name:         "Strategy Development",
+  },
+  {
+    name:         "Campaigning",
+  },
+  {
+    name:         "Curriculum Development",
+  },
+  {
+    name:         "Writing and Editing",
+  },
+  {
+    name:         "Policy Development",
+  },
+  {
+    name:         "Fundraising",
+  },
+  {
+    name:         "Translation",
+  },
+  {
+    name:         "Graphic Design",
+  },
+  {
+    name:         "Web Design and Development",
+  },
+  {
+    name:         "IT",
+  },
+]
+
+skills_attributes.each { |params| Skill.create!(params) }
