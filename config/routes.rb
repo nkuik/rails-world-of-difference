@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   resources :projects
   resources :applications
+  resources :skill_users, only: [:new, :create, :destroy]
 
 end
