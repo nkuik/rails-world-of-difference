@@ -1,0 +1,15 @@
+<%= form_for @project, class: '', id: '' do |f| %>
+  <% if @errors.present? %>
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :name, 'Name' %>
+  <%= f.text_field :name, class: 'text' %>
+  <%= f.label :description, 'Description' %>
+  <%= f.text_field :description, class: 'text' %>
+  <%= f.submit 'Create a project', class:"btn btn-primary" %>
+  <% end %>
