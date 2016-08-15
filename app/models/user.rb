@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :skill_users
+  # accepts_nested_attributes_for :skill_users
 end
