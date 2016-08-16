@@ -64,7 +64,7 @@ end
   complete = [true, false].sample
   id = (0..39).to_a.sample
   skill_id = (0..11).to_a.sample
-  Project.create(author_id: id, Project.project_skill: skill_id, name: name, description: description, complete: complete)
+  Project.create(author_id: id, name: name, description: description, complete: complete)
   5.times do
     content = Faker::Hipster.paragraph
     accepted = [true, false].sample
