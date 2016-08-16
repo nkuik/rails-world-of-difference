@@ -9,6 +9,7 @@
 
     </div>
 
+    <!-- Add the Facebook picture of the user if the user has signed in with Facebook -->
     <% if user_signed_in? && current_user.facebook_picture_url %>
       <%= image_tag current_user.facebook_picture_url, height: 50, width: 50 %>
     <% end %>
