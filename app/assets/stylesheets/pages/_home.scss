@@ -1,6 +1,18 @@
 #maintitle {
-  font-size: 40px;
+  font-size: 50px;
 }
+
+.banner {
+  background-image: url("http://unsplash.it/1000/1000");
+  background-size: cover;
+  color: white;
+  padding: 120px 0;
+  position: relative;
+}
+.container {
+  height: 700px;
+}
+
 /* -------------------------------------
  * CSS code specific to home page
  * (margin/padding adjustments)
