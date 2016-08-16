@@ -1,11 +1,10 @@
-class ProjectsController < ApplicationController
+class ApplicationsController < ApplicationController
   def index
     @applications = Application.all
   end
 
   def show
     @application  = Application.find(params[:id])
-    # @skills   = @project.project_skills
   end
 
   def new
@@ -15,7 +14,7 @@ class ProjectsController < ApplicationController
   def create
     @application  = Application.new(application_params)
     if @application.save
-      redirect_to project_path(@application)
+      redirect_to application_path(@application)
     else
       @errors = @application.errors.full_messages
       render :new
