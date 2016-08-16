@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :authored_projects, class_name: Project, foreign_key: :author_id
   has_many :skill_users
+  has_many :skills, through: :skill_users
   has_many :applications, dependent: :destroy
   # accepts_nested_attributes_for :skill_users
 end
