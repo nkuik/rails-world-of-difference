@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @application  = Application.new(project_params)
+    @application  = Application.new(application_params)
     if @application.save
       redirect_to project_path(@application)
     else
@@ -23,7 +23,7 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    @application.update(project_params)
+    @application.update(application_params)
     if @application.save
       redirect_to application_path(@application)
     else
@@ -39,8 +39,8 @@ class ProjectsController < ApplicationController
 
   private
 
-  def project_params
-    params.require(:application).permit(:name, :description)
+  def application_params
+    params.require(:application).permit(:content, :accepted)
   end
 
 
