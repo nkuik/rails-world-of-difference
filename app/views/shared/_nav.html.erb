@@ -2,10 +2,10 @@
 <nav class="my-navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">See all our projects</a>
+      <%= link_to "See all our projects", projects_path, class: "navbar-brand" %>
         <a class="navbar-brand" href="#">contact </a>
         <a class="navbar-brand" href="#">about</a>
-        <a class="navbar-brand" href="#">log in</a>
+        <%= link_to "log in", new_user_session_path, class: "navbar-brand" %>
 
     </div>
 
