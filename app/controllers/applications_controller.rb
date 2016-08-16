@@ -8,6 +8,7 @@ class ApplicationsController < ApplicationController
   end
 
   def new
+    raise
     @application  = Application.new
   end
 
