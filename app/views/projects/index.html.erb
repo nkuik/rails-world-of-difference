@@ -1,0 +1,14 @@
+<% @projects.each do |project|%>
+<%= link_to project_path(project) do%>
+<h1><%= project.name %></h1>
+    <% end%>
+<h3>Skills</h3>
+      <% project.project_skills.each do |project_skill| %>
+      <li>
+      <%= project_skill.skill.name %>
+      <%= project_skill.level%>
+      </li>
+      <% end %>
+    </ul>
+<hr>
+<% end%>
