@@ -11,20 +11,11 @@
   </head>
 
   <body>
-    <div class="banner">
-      <%= javascript_include_tag 'application' %>
-    </div>
 
-    <div> <%= render "shared/new_nav" %> </div>
-    <div class="container">
-      <%= render "shared/card" %>
-    </div>
-
-
+    <%= render "shared/new_nav" %>
     <%= render 'shared/flashes' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= yield %>
-    <%= javascript_include_tag 'application' %>
+    <!-- javascript_include_tag 'application' -->
+
   </body>
 </html>
