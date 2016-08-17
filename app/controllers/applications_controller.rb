@@ -43,5 +43,4 @@ class ApplicationsController < ApplicationController
     params.require(:application).permit(:content, :accepted)
   end
 
-
 end
