@@ -1,5 +1,5 @@
 <div class="container">
-    <%= form_for @project, class: '', id: '' do |f| %>
+    <%= simple_form_for @project do |f| %>
       <% if @errors.present? %>
         <ul>
           <% @errors.each do |error| %>
@@ -8,17 +8,17 @@
         </ul>
       <% end %>
 
-      <%= f.label :name, 'Name' %>
-      <%= f.text_field :name, class: 'text' %>
-      <%= f.label :description, 'Description' %>
-      <%= f.text_field :description, class: 'text' %>
-      <%= f.submit 'Create a project', class:"btn btn-primary" %>
-
-     <% 2.times do %>
-      <%= f.fields_for :project_skills do |ff| %>
-       <%= ff.select :skill_id, @skills, { :prompt => "Please select"}%>
+      <%= f.label :name %>
+      <%= f.input_field :name %>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+      <% 1.times do %>
+        <%= f.simple_fields_for :project_skills do |ff| %>
+        <%= ff.select :skill_id, @skills, { :prompt => "Please select"}%>
             <%= ff.select :level, (0..10)%>
+        <% end %>
       <% end %>
-     <% end %>
+      <%= f.submit 'Create a project', class:"btn btn-primary" %>
     <% end %>
 </div>
+

@@ -12,8 +12,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :skill_users
   has_many :skills, through: :skill_users
   has_many :projects, through: :applications
-  # accepts_nested_attributes_for :skill_users
-  #
+
   def self.find_for_facebook_oauth(auth)
     user_params = auth.to_h.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)

@@ -65,6 +65,9 @@ Application.destroy_all
     complete = [true, false].sample
     project = Project.create(author_id: user.id, name: name, description: description, complete: complete)
     project
+    skill_id = (0..11).to_a.sample
+    skill_level = (0..9).to_a.sample
+    # ProjectSkill.create(project_id: project.id, skill_id: skill_id, level: skill_level)
     2.times do
       content = Faker::Hipster.paragraph
       accepted = [true, false].sample
