@@ -1,13 +1,12 @@
 
 .card {
   background-size: cover;
-  background-color: #7fd3de;
-  padding: 5px;
-  border-bottom: solid 5px #FFBA00;
-  // position: relative;
-  // h2 {
-  // }
+  background-color: $beige;
+  padding: 8px 15px;
+  border-top: solid 10px $orange;
+  border-radius: 2px;
 }
+
 .card-user {
   position: absolute;
   right: 10px;
