@@ -2,12 +2,14 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">See our projects</a>
+    <%= link_to "See our projects", projects_path, class:"navbar-wagon-item navbar-wagon-link" %>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
     <!-- Text link -->
     <a href="" class="navbar-wagon-item navbar-wagon-link">About</a>
-    <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Login</a>
+    <!-- To login pag,e link -->
+    <%= link_to "Log in", user_session_path, class:"navbar-wagon-item navbar-wagon-link" %>
+    <!-- Link logout -->
+    <%= link_to "Log off", destroy_user_session_path, class:"navbar-wagon-item navbar-wagon-link", method: :delete %>
   </div>
 
   <!-- Dropdown appearing on mobile only -->
@@ -15,9 +17,9 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <!-- link to logoff -->
+        <li><%= link_to "Log off", destroy_user_session_path, class:"navbar-wagon-item navbar-wagon-link", method: :delete %></li>
+        <li><%= link_to "See our projects", projects_path, class:"navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
 
     </div>

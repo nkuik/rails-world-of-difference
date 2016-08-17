@@ -2,12 +2,12 @@
   <div class="container">
     <h1>A World of Difference</h1>
     <h3>Volunteering in the Digital Age</h3>
-    <button type="submit" class="btn btn-medium">Create an account</button>
+    <%= link_to "Create an account", new_user_registration_path, class: "btn btn-medium" %>
   </div>
 </div>
 
 <!-- Added to be able to sign out -->
-<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+
 <!-- used to be on application.html.erb -->
 
 
