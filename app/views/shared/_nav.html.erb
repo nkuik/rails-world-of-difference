@@ -7,6 +7,9 @@
     <a href="" class="navbar-wagon-item navbar-wagon-link">About</a>
     <%= link_to "Log off", destroy_user_session_path, class:"navbar-wagon-item navbar-wagon-link", method: :delete %>
     <%= link_to "Log in", user_session_path, class:"navbar-wagon-item navbar-wagon-link" %>
+    <% if user_signed_in? && current_user.facebook_picture_url %>
+      <%= image_tag current_user.facebook_picture_url, height: 50, width: 50 %>
+    <% end %>
   </div>
     <!-- Dropdown appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
