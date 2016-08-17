@@ -1,7 +1,19 @@
 
-    <h1>THIS IS YOUR PROFILE</h1>
-      <h1><%= @user.email %></h1>
+    <h1>Yyour Profile</h1>
+      <h3><%= @user.first_name %></h3>
+      <h3><%= @user.last_name %></h3>
+      <p><%= @user.email %></p>
+
+      <ul>
+    <h3>Skills</h3>
+      <% @user.skill_users.each do |skill_user| %>
+      <li>
+      <%= skill_user.skill.name %>
+      <%= skill_user.level%>
+      </li>
+      <% end %>
+    </ul>
 
 <%= link_to 'See all projects', projects_path, class:"btn" %>
-<%= link_to 'Delete this user', project_path(@user), method: :delete, class:"btn"%>
-<%= link_to 'Edit user', edit_project_path(@user), class:"btn" %>
+<%= link_to 'Delete this user', profile_path(@user), method: :delete, class:"btn"%>
+<%= link_to 'Edit user', edit_profile_path(@user), class:"btn" %>

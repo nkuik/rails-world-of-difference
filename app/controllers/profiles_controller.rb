@@ -7,12 +7,13 @@ class ProfilesController < ApplicationController
   def edit
     @user   = User.find(params[:id])
     @skills = Skill.all.map {|skill| [skill.name, skill.id] }
+    @user.skill_users.build unless @user.skill_users.present?
   end
 
   def update
      @user  = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to project_path(@user)
+      redirect_to profile_path(@user)
     else
       @errors = @user.errors.full_messages
       render :edit
@@ -27,7 +28,7 @@ class ProfilesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :description, :author_id, project_skills_attributes: [:id, :level, :skill_id])
+    params.require(:user).permit(:first_name, :last_name, skill_users_attributes: [:id, :level, :skill_id])
   end
 
 end
