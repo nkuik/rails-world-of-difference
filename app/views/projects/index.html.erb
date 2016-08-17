@@ -1,6 +1,10 @@
+<div class='text-center'>
+  <%= link_to "Create new project", new_project_path, class: "btn btn-medium text-center" %>
+</div>
 <div class="container">
   <div class="row">
-    <% @projects.each do |project|%>
+    <% sorted_projects = @projects.sort.reverse %>
+    <% sorted_projects.each do |project|%>
       <div class="col-md-6 col-xs-12">
         <div class="card">
         <% project.project_skills.each do |project_skill| %>
