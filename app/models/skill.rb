@@ -1,3 +1,3 @@
 class Skill < ApplicationRecord
-  has_many :project_skills
+  has_many :skill_users
 end
