@@ -1,14 +1,22 @@
-<% @projects.each do |project|%>
-<%= link_to project_path(project) do%>
-<h1><%= project.name %></h1>
-    <% end%>
-<h3>Skills</h3>
-      <% project.project_skills.each do |project_skill| %>
-      <li>
-      <%= project_skill.skill.name %>
-      <%= project_skill.level%>
-      </li>
-      <% end %>
-    </ul>
-<hr>
-<% end%>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-lg-10">
+      <div class="card">
+        <% @projects.each do |project|%>
+        <%= link_to project_path(project) do%>
+        <h2><%= project.name %></h2>
+            <% end%>
+        <h4>Skills</h4>
+              <% project.project_skills.each do |project_skill| %>
+              <li>
+              <%= project_skill.skill.name %>
+              <%= project_skill.level%>
+              </li>
+              <% end %>
+            </ul>
+        <hr>
+        <% end%>
+      </div>
+    </div>
+  </div>
+</div>
