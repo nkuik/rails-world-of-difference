@@ -1,26 +1,26 @@
-<%= form_for @project, class: '', id: '' do |f| %>
-  <% if @errors.present? %>
-    <ul>
-      <% @errors.each do |error| %>
-        <li><%= error %></li>
-      <% end %>
-    </ul>
+<div class="container">
+  <%= form_for @project, class: '', id: '' do |f| %>
+    <% if @errors.present? %>
+      <ul>
+        <% @errors.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <%= f.label :name, 'Name' %>
+    <%= f.text_field :name, class: 'text' %>
+    <%= f.label :description, 'Description' %>
+    <%= f.text_field :description, class: 'text' %>
+    <%= f.submit 'Update a project', class:"btn btn-primary" %>
+
+
+    <%= f.fields_for :project_skills do |ff| %>
+      <%= ff.hidden_field :id %>
+      <%= ff.select :skill_id, @skills %>
+      <%= ff.select :level, (0..10)%>
+    <% end %>
   <% end %>
-
-  <%= f.label :name, 'Name' %>
-  <%= f.text_field :name, class: 'text' %>
-  <%= f.label :description, 'Description' %>
-  <%= f.text_field :description, class: 'text' %>
-  <%= f.submit 'Update a project', class:"btn btn-primary" %>
-
-
-  <%= f.fields_for :project_skills do |ff| %>
-    <%= ff.hidden_field :id %>
-    <%= ff.select :skill_id, @skills %>
-    <%= ff.select :level, (0..10)%>
-  <% end %>
-<% end %>
-
-
+</div>
 
 
