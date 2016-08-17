@@ -5,26 +5,33 @@ class ProjectsController < ApplicationController
 
   def show
     @project  = Project.find(params[:id])
-    # @skills   = @project.project_skills
   end
 
   def new
     @project  = Project.new
+    @skills   = Skill.all.map {|skill| [skill.name, skill.id] }
+    @project_skills = @project.project_skills.build
   end
 
   def create
-    @project  = Project.new(project_params)
+    @project = current_user.authored_projects.build(project_params)
     if @project.save
       redirect_to project_path(@project)
     else
+      @skills   = Skill.all.map {|skill| [skill.name, skill.id] }
       @errors = @project.errors.full_messages
       render :new
     end
   end
 
+  def edit
+    @project  = Project.find(params[:id])
+    @skills   = Skill.all.map {|skill| [skill.name, skill.id] }
+  end
+
   def update
-    @project.update(project_params)
-    if @project.save
+     @project  = Project.find(params[:id])
+    if @project.update(project_params)
       redirect_to project_path(@project)
     else
       @errors = @project.errors.full_messages
@@ -40,8 +47,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :description)
+    params.require(:project).permit(:name, :description, :author_id, project_skills_attributes: [:id, :level, :skill_id])
   end
-
 
 end

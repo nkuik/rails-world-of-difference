@@ -7,17 +7,20 @@
     </ul>
   <% end %>
 
-
   <%= f.label :name, 'Name' %>
   <%= f.text_field :name, class: 'text' %>
   <%= f.label :description, 'Description' %>
   <%= f.text_field :description, class: 'text' %>
-  <%= f.submit 'Create a project', class:"btn btn-primary" %>
+  <%= f.submit 'Update a project', class:"btn btn-primary" %>
 
- <% 2.times do %>
+
   <%= f.fields_for :project_skills do |ff| %>
-   <%= ff.select :skill_id, @skills, { :prompt => "Please select"}%>
-        <%= ff.select :level, (0..10)%>
+    <%= ff.hidden_field :id %>
+    <%= ff.select :skill_id, @skills %>
+    <%= ff.select :level, (0..10)%>
   <% end %>
- <% end %>
 <% end %>
+
+
+
+
