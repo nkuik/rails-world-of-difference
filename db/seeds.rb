@@ -61,7 +61,7 @@ Application.destroy_all
   user
   2.times do
     name = Faker::Commerce.department(5)
-    description = Faker::Lorem.paragraphs(1)
+    description = Faker::Lorem.paragraph(1)
     complete = [true, false].sample
     project = Project.create(author_id: user.id, name: name, description: description, complete: complete)
     project

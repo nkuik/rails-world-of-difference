@@ -12,7 +12,7 @@
   display: flex;
   height: 70px;
   margin: 0px 0px;
-  align-items: left;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -34,7 +34,15 @@
 .navbar-wagon-right {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.navbar-wagon-left {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 /* Navbar item */

@@ -1,7 +1,11 @@
 <div class="banner" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url(<%= image_path 'houses.jpg' %>)">
-  <div class="container">
+  <div class="container text-center">
     <h1>A World of Difference</h1>
-    <h3>Volunteering in the Digital Age</h3>
-    <%= link_to "Create an account", new_user_registration_path, class: "btn btn-medium" %>
+    <h3>Volunteering in the digital age</h3>
   </div>
+</div>
+
+<div class="container text-center padded">
+    <h4>Contribute to your favorite causes by volunteering online</h4>
+  <%= link_to "Look at our projects", projects_path, class: "btn btn-medium text-center" %>
 </div>
