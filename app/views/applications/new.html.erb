@@ -1,1 +1,17 @@
+<!-- should be all on projects -->
 
+<%= simple_form_for @application, class: '', id: '' do |f| %>
+  <% if @errors.present? %>
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :content, 'Content' %>
+  <%= f.text_field :content, placeholder: 'why are you a good fit?', class: 'text' %>
+  <!-- also send the users information, hidden -->
+  <!-- some type of upload? Anything with skills -->
+  <%= f.submit 'Create an application', class:"btn btn-primary" %>
+<% end %>

@@ -1,19 +1,30 @@
 #maintitle {
-  font-size: 50px;
+  font-size: 70px;
+  h1 {
+  font-family: 'Merriweather', serif;
+  color: black;
+
+  }
 }
 
 .banner {
   background-image: url("http://unsplash.it/1000/1000");
+  // background: linear-gradient(to left, #bdc3c7 , #2c3e50);
   background-size: cover;
   color: white;
   padding: 120px 0;
   position: relative;
 }
 .container {
-  height: 700px;
+  height: 400px;
 }
+
+// h1, h2, h3, h4 {
+//   font-family: $header-font;
+// }
 
 /* -------------------------------------
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+

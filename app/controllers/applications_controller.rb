@@ -5,6 +5,7 @@ class ApplicationsController < ApplicationController
 
   def show
     @application  = Application.find(params[:id])
+    @user = User.find(@application.user_id)
   end
 
   def new
@@ -41,6 +42,5 @@ class ApplicationsController < ApplicationController
   def application_params
     params.require(:application).permit(:content, :accepted)
   end
-
 
 end
