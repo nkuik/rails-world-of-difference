@@ -1,0 +1,43 @@
+
+<%= form_for @user, url: profile_path, class: '', id: '' do |f| %>
+  <% if @errors.present? %>
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <ul>
+  <%= f.label :first_name, 'First name' %>
+  <%= f.text_field :first_name, class: 'text' %>
+  <br>
+  <%= f.label :last_name, 'Last name' %>
+  <%= f.text_field :last_name, class: 'text' %>
+  <br>
+  <%= f.label :email, 'Email' %>
+  <%= f.text_field :email, class: 'text' %>
+  </ul>
+
+  <ul>
+  <h3>Select your skills</h3>
+<% if @user.skill_users.last.new_record? %>
+    <% 2.times do %>
+      <%= f.fields_for :skill_users do |ff| %>
+          <%= ff.hidden_field :id %>
+            <li> <%= ff.select :skill_id, @skills, { :prompt => "Please select"}%>
+             <%= ff.select :level, (0..10)%></li>
+           <br>
+        <% end %>
+    <% end %>
+  <% else%>
+   <li> <%= f.fields_for :skill_users do |ff| %>
+        <%= ff.hidden_field :id %>
+        <%= ff.select :skill_id, @skills, { :prompt => "Please select"}%>
+        <%= ff.select :level, (0..10)%>
+      <% end %>
+  <% end %>
+</ul>
+
+  <%= f.submit 'Update your profile', class:"btn btn-primary" %>
+<% end %>
+

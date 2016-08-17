@@ -57,7 +57,7 @@ Application.destroy_all
   user_email = Faker::Internet.email
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
-  user = User.create(email: user_email, password: 'topsecret', password_confirmation: 'topsecret')
+  user = User.create(first_name: first_name, last_name: last_name, email: user_email, password: 'topsecret', password_confirmation: 'topsecret')
   user
   2.times do
     name = Faker::Commerce.department(5)

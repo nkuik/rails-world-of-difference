@@ -1,25 +1,27 @@
 <div class="navbar">
-  <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <%= link_to "See our projects", projects_path, class:"navbar-wagon-item navbar-wagon-link" %>
     <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">See our projects</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
     <!-- Text link -->
     <a href="" class="navbar-wagon-item navbar-wagon-link">About</a>
-    <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Login</a>
+    <%= link_to "Log off", destroy_user_session_path, class:"navbar-wagon-item navbar-wagon-link", method: :delete %>
+    <%= link_to "Log in", user_session_path, class:"navbar-wagon-item navbar-wagon-link" %>
+    <% if user_signed_in? && current_user.facebook_picture_url %>
+      <%= image_tag current_user.facebook_picture_url, height: 50, width: 50 %>
+    <% end %>
   </div>
-
-  <!-- Dropdown appearing on mobile only -->
+    <!-- Dropdown appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <!-- links in dropdown menu -->
+        <li><%= link_to "Log off", destroy_user_session_path, class:"navbar-wagon-item navbar-wagon-link", method: :delete %></li>
+        <li><%= link_to "See our projects", projects_path, class:"navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
-
+    <% else %>
     </div>
   </div>
 </div>
+
