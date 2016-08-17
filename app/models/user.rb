@@ -6,8 +6,12 @@ class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: [:facebook]
 
   has_many :authored_projects, class_name: Project, foreign_key: :author_id
-  has_many :skill_users
+  has_many :skill_users, inverse_of: :user, dependent: :destroy
   has_many :applications, dependent: :destroy
+
+  accepts_nested_attributes_for :skill_users
+  has_many :skills, through: :skill_users
+  has_many :projects, through: :applications
   # accepts_nested_attributes_for :skill_users
   #
   def self.find_for_facebook_oauth(auth)
@@ -30,3 +34,8 @@ class User < ApplicationRecord
     return user
   end
 end
+
+  # has_many :applications, dependent: :destroy <-- not sure if we need dependent destroy?
+
+
+
