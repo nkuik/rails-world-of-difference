@@ -8,8 +8,10 @@
 
   <h3>Skills</h3>
     <% @user.skill_users.each do |skill_user| %>
-      <%= skill_user.skill.name %>
-      <%= skill_user.level%>
+      <div class="text-center less-padded">
+        <%= skill_user.skill.name %>
+        <%= skill_user.level%>
+      </div>
     <% end %>
   <div class="text-center less-padded">
     <h3>Your projects</h3>
