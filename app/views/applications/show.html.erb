@@ -1,6 +1,40 @@
 <div class="container"></div>
   <h2>Application</h2>
-  <h3>User email: <%= @user.email %></h3>
-  <h3>Accepted?:<%=  @application.accepted %></h3>
+  <h4>Name:</h4>
+  <%= link_to image_tag(current_user.facebook_picture_url, height: 50, width: 50), edit_profile_path(current_user) if current_user.facebook_picture_url.present? %>
+  <h5><%= @user.first_name + " " + @user.last_name %></h5>
+  <h4>Skills:</h4>
+  <% @user.skills.each do |skill|%>
+  <ul>
+    <%= skill.name %>
+    <%= @user.skill_users.find_by(skill: skill).level %>
+  </ul>
+  <% end%>
+  <h4>Contact details:</h4>
+  <h5><%= @user.email %></h5>
+  <h4>Status:</h4>
+  <h5>Current status: <%=  @application.accepted? %></h5>
+    <%= form_for @application, url: project_applications_path,  class: '', id: '' do |f| %>
+      <% if @errors.present? %>
+        <ul>
+          <% @errors.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <%= f.label :accepted, 'select this application?' %>
+      <%= f.check_box :accepted %>
+    <% end %>
+  <h4>Other details:</h4>
+  <h5>Applied to the project on <%=@application.created_at%></h5>
+
+
+
+
+
+  <h5>Member of World of Difference since <%=@user.created_at%></h5>
+  <h4>Application:</h4>
   <p><%= @application.content %></p>
 </div>
+
+
