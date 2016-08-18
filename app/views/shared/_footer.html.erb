@@ -1,21 +1,26 @@
 <!-- <div class="footer">Here is a space for the footer.</div>
  -->
 <div class="footer">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-xs-4">
-        <ul class="list-inline pull-left footer-left footer-icons">
+        <ul class="list-inline footer-left-icons">
           <li>
-            <a href="https://www.facebook.com/groups/P4C11/">
-              <i class="fa fa-facebook pull-left"></i>
-            </a>
+            <%= link_to "https://www.facebook.com/groups/P4C11/" do %>
+                <i class="fa fa-facebook"></i>
+            <% end %>
           </li>
           <li>
-            <a href="https://twitter.com/actionaiddk">
-              <i class="fa fa-twitter pull-left"></i>
-            </a>
+            <%= link_to "https://twitter.com/actionaiddk" do %>
+                <i class="fa fa-twitter"></i>
+            <% end %>
           </li>
         </ul>
+      </div>
+      <div class="col-xs-offset-4 col-xs-4">
+        <div class="footer-right-text">
+          <p>About</p>
+        </div>
       </div>
     </div>
   </div>

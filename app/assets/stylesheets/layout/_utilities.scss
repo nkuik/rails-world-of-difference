@@ -10,6 +10,10 @@
   padding-bottom: 5em;
 }
 
+body {
+  min-height: calc(100vh-70px);
+}
+
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
