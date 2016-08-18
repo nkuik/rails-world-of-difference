@@ -11,7 +11,7 @@
       <%= f.label :name, 'Name' %>
       <%= f.text_field :name, class: 'text' %>
       <%= f.label :description, 'Description' %>
-      <%= f.text_field :description, class: 'text' %>
+      <%= f.cktext_area :description, value: 'Describe the project', class: 'text' %>
       <%= f.submit 'Create a project', class:"btn btn-primary" %>
 
      <% 2.times do %>

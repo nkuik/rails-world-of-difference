@@ -1,0 +1,23 @@
+<h3>Number of applications: <%= @applications.count %> </h3>
+<hr>
+
+
+<% @applications.each do |application|%>
+  <h4><%= application.user.first_name %></h4>
+  <h4><%= application.user.last_name %></h4>
+  <% application.user.skills.each do |skill|%>
+  <ul>
+    <%= skill.name %>
+    <%= application.user.skill_users.find_by(skill: skill).level %>
+  </ul>
+  <% end%>
+  <p><%=application.content %></p>
+
+  <%= link_to 'Read more', project_application_path(params[:project_id], application) %>
+  <hr>
+<% end%>
+
+
+
+
+
