@@ -9,11 +9,10 @@
       <div class="col-md-6 col-xs-12">
         <div class="card">
           <h2><%= link_to project.name, project_path(project) %></h2>
-          <h4>Skills</h4>
           <p><%= project.description %></p>
+          <h4>Skill</h4>
           <% project.project_skills.each do |project_skill| %>
             <h3> <%= project_skill.skill.name %></h3>
-            <%= project_skill.level%>
           <% end %>
         </div>
       </div>
