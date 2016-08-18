@@ -3,12 +3,19 @@
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
-  background: #6AD58B;
+  background: $orange;
   transition: background 0.3s ease;
 }
 .btn:hover {
   opacity: 1;
-  background: #3ac162;
+  background: $grey;
   text-decoration: none;
   color: white;
 }
+
+// Copy
+// <div class="btn-group" role="group" aria-label="...">
+//   <button type="button" class="btn btn-default">Left</button>
+//   <button type="button" class="btn btn-default">Middle</button>
+//   <button type="button" class="btn btn-default">Right</button>
+// </div>
