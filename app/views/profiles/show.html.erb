@@ -1,7 +1,6 @@
 <div class="container">
-      <h1>Yyour Profile</h1>
-        <h3><%= @user.first_name %></h3>
-        <h3><%= @user.last_name %></h3>
+      <h1>Your Profile</h1>
+        <h3><%= @user.first_name + " " + @user.last_name %></h3>
         <p><%= @user.email %></p>
 
       <ul>
@@ -13,8 +12,20 @@
         </li>
         <% end %>
       </ul>
+    <h3>Your projects</h3>
+     <% @user.projects.each do |project| %>
+    <%= link_to "#{project.name}", project_path(project) %>
+        <% end %>
+    <br>
+    <h3>Your applications</h3>
+    <% @user.applications.each do |application| %>
+    <%= link_to "#{application.project.name}", project_path(application) %>
+        <% end %>
+
+<br>
+<br>
 
   <%= link_to 'See all projects', projects_path, class:"btn" %>
-  <%= link_to 'Delete this user', profile_path(@user), method: :delete, class:"btn"%>
-  <%= link_to 'Edit user', edit_profile_path(@user), class:"btn" %>
+  <%= link_to 'Delete my profile', profile_path(@user), method: :delete, class:"btn"%>
+  <%= link_to 'Edit my profile', edit_profile_path(@user), class:"btn" %>
 </div>

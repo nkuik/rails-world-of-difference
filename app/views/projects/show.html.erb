@@ -1,6 +1,7 @@
 <div class="container">
       <h1><%= @project.name %></h1>
-      <p><%= @project.description %></p>
+    <%= simple_format(@project.description) %>
+
     <ul>
     <h3>Skills</h3>
       <% @project.project_skills.each do |project_skill| %>
