@@ -1,24 +1,27 @@
 <div class="container">
-  <%= simple_form_for @project do |f| %>
-    <%= f.error_notification %>
-
-    <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :description, as: :text %>
-      <% 1.times do %>
-        <%= f.simple_fields_for :project_skills do |ff| %>
-        <h4>Project skill</h4>
-        <%= ff.select :skill_id, @skills, { :prompt => "Please select"}%>
-            <h4>Skill level</h4>
-            <%= ff.select :level, (0..10)%>
+  <%= form_for @project, class: '', id: '' do |f| %>
+    <% if @errors.present? %>
+      <ul>
+        <% @errors.each do |error| %>
+          <li><%= error %></li>
         <% end %>
-      <% end %>
-    </div>
+      </ul>
+    <% end %>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Create Project"  %>
-    </div>
+    <%= f.label :name, 'Name' %>
+    <%= f.text_field :name, class: 'text' %>
+    <%= f.label :description, 'Description' %>
+    <%= f.cktext_area :description, value: 'Describe the project', class: 'text' %>
+
+    <% 1.times do %>
+      <%= f.simple_fields_for :project_skills do |ff| %>
+      <h4>Project skill</h4>
+      <%= ff.select :skill_id, @skills, { :prompt => "Please select"}%>
+          <h4>Skill level</h4>
+          <%= ff.select :level, (0..10)%>
+      <% end %>
+    <% end %>
+    <%= f.submit 'Create a project', class:"btn btn-primary" %>
   <% end %>
 </div>
 
-<!-- -->
