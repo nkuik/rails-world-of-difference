@@ -1,23 +1,30 @@
+<div class="container">
 <h3>Number of applications: <%= @applications.count %> </h3>
 <hr>
+  <div class="row">
+    <% @applications.each do |application|%>
+    <div class="col-xs-12 col-md-7">
+      <h4><strong>Application:</strong></h4>
+      <div class="giveMeEllipsis">
+        <%= simple_format(application.content) %>
+      </div>
+    </div>
+   <div class="col-xs-12 col-md-4 col-md-offset-1">
+      <h4 class="padding-top-40"><strong>Name:</strong></h4>
+      <h5><%= application.user.first_name + " " + application.user.last_name %></h5>
+      <h4><strong>Skills:</strong></h4>
+      <% application.user.skills.each do |skill|%>
+    <ul>
+      <h5><%= skill.name %>
+      <%= application.user.skill_users.find_by(skill: skill).level %></h5>
+    </ul>
+        <% end%>
+      <%= link_to 'Read more', project_application_path(params[:project_id], application),{ :class=>"btn" } %>
+    </div>
 
-
-<% @applications.each do |application|%>
-  <h4><%= application.user.first_name %></h4>
-  <h4><%= application.user.last_name %></h4>
-  <% application.user.skills.each do |skill|%>
-  <ul>
-    <%= skill.name %>
-    <%= application.user.skill_users.find_by(skill: skill).level %>
-  </ul>
-  <% end%>
-  <p><%=application.content %></p>
-
-  <%= link_to 'Read more', project_application_path(params[:project_id], application) %>
-  <hr>
-<% end%>
-
-
-
+    <hr>
+    <% end%>
+  </div>
+</div>
 
 
