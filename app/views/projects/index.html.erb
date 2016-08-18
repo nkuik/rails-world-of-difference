@@ -8,11 +8,14 @@
     <% sorted_projects.each do |project|%>
       <div class="col-md-6 col-xs-12">
         <div class="card">
+          <% project.project_skills.each do |project_skill| %>
+            <%= image_tag("#{project_skill.skill.name.downcase.tr(' ', '')}.svg", height: 100, width: 100) %>
+          <% end %>
           <h2><%= link_to project.name, project_path(project) %></h2>
           <p><%= project.description %></p>
           <h4>Skill</h4>
           <% project.project_skills.each do |project_skill| %>
-            <h3> <%= project_skill.skill.name %></h3>
+            <h6> <%= project_skill.skill.name %></h6>
           <% end %>
         </div>
       </div>
