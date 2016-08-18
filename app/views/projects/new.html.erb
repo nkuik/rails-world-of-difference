@@ -7,7 +7,9 @@
       <%= f.input :description, as: :text %>
       <% 1.times do %>
         <%= f.simple_fields_for :project_skills do |ff| %>
+        <h4>Project skill</h4>
         <%= ff.select :skill_id, @skills, { :prompt => "Please select"}%>
+            <h4>Skill level</h4>
             <%= ff.select :level, (0..10)%>
         <% end %>
       <% end %>
