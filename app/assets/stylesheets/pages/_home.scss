@@ -1,20 +1,31 @@
-#maintitle {
-  font-size: 70px;
+.wrapper {
+  height: 555px;
+  color: white;
+  padding-top: 10%;
   h1 {
-  font-family: 'Merriweather', serif;
-  color: black;
-
+    font-size: 52px;
+    // font-weight: 900;
   }
+  // h3 {
+  //   font-variant: 700i;
+  // }
 }
+
 
 .banner {
   background-size: cover;
   color: white;
-  padding: 120px 0;
+  // padding: 120px 0;
   position: relative;
-  height: 400px;
+  height: 350px;
 }
 
-// .container {
-//   height: 400px;
-// }
+.banner-grey {
+    background-size: cover;
+  height: 350px;
+  background-color: beige;
+  h4 {
+    margin-top: 0px;
+    padding-top: 10px;
+  }
+}
