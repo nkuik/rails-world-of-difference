@@ -2,27 +2,25 @@
 <% picture_names = ["kenyaprotest", "largegroup", "malespeaker", "nepalmarch", "pakistangroup", "peoplefence", "playinggame", "refugeecamp", "smallgroup"] %>
 <% picture_name = picture_names.sample %>
 
-<div class="text-center">
+<div class="container padded text-center">
   <div class="img-container">
     <%= image_tag( "#{picture_name}.jpg") %>
   </div>
-
-  <div class="container text-center">
-        <h1><%= @project.name %></h1>
-        <p><%= @project.description %></p>
-      <ul>
-      <h3>Skills</h3>
-        <% @project.project_skills.each do |project_skill| %>
-        <li>
-        <%= project_skill.skill.name %>
-        <%= project_skill.level%>
-        </li>
-        <% end %>
-      </ul>
+  <div>
+    <h1><%= @project.name %></h1>
+    <p><%= @project.description %></p>
+    <h3>Skills</h3>
+      <% @project.project_skills.each do |project_skill| %>
+        <span class="padded">
+          <%= project_skill.skill.name %>
+          <%= project_skill.level%>
+        </span>
+      <% end %>
+  </div>
   <%= link_to 'All projects', projects_path, class:"btn" %>
   <%= link_to 'Delete this project', project_path(@project), method: :delete, class:"btn"%>
   <%= link_to 'Edit project', edit_project_path(@project), class:"btn" %>
   <%= link_to 'Apply for this project', new_project_application_path(@project), class:"btn" %>
   <%= link_to 'Project applications', project_applications_path(@project), class:"btn" %>
-  </div>
+
 </div>
