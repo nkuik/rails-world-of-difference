@@ -5,9 +5,19 @@
   </div>
 </div>
 
+<!--  -->
+
+
+
+
 <div class="container text-center">
-  <h4>Contribute to your favorite causes by volunteering online</h4>
-  <%= link_to "Look at our projects", projects_path, class: "btn btn-medium text-center" %>
+  <h4>Contribute to your favorite causes or get help with your own project</h4>
+  <div>
+    <span>
+      <%= link_to "Browse projects", projects_path, class: "card" %>
+      <%= link_to "Create project", new_project_path, class: "card" %>
+    </span>
+  </div>
 </div>
 
 
