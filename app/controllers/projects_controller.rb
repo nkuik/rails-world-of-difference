@@ -11,6 +11,8 @@ class ProjectsController < ApplicationController
 
   def show
     @project  = Project.find(params[:id])
+    @author   = User.find(@project.author_id)
+    @applications = Application.where(project_id: params[:project_id])
   end
 
   def new

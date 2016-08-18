@@ -1,26 +1,35 @@
-<!-- display random picture -->
 <% picture_names = ["kenyaprotest", "largegroup", "malespeaker", "nepalmarch", "pakistangroup", "peoplefence", "playinggame", "refugeecamp", "smallgroup"] %>
 <% picture_name = picture_names.sample %>
 
-<div class="container padded text-center">
-  <div class="img-container">
+<div class="container less-padded text-center">
+  <div class="img-container img-responsive">
     <%= image_tag( "#{picture_name}.jpg") %>
   </div>
   <div>
     <h1><%= @project.name %></h1>
-    <p><%= @project.description %></p>
-    <h3>Skills</h3>
+    <%= simple_format(@project.description) %>
+    <div class="less-padded">
+      <h3>Skills Needed</h3>
       <% @project.project_skills.each do |project_skill| %>
-        <span class="padded">
-          <%= project_skill.skill.name %>
-          <%= project_skill.level%>
+        <span class="less-padded">
+          <p>Level <%= project_skill.level%> <%= project_skill.skill.name %></p>
         </span>
       <% end %>
+    </div>
   </div>
-  <%= link_to 'All projects', projects_path, class:"btn" %>
-  <%= link_to 'Delete this project', project_path(@project), method: :delete, class:"btn"%>
-  <%= link_to 'Edit project', edit_project_path(@project), class:"btn" %>
-  <%= link_to 'Apply for this project', new_project_application_path(@project), class:"btn" %>
-  <%= link_to 'Project applications', project_applications_path(@project), class:"btn" %>
 
+  <div class="container less-padded text-center">
+    <%= link_to 'See project applicants', project_applications_path(@project), class:"btn" %>
+    <%= link_to 'Apply for this project', new_project_application_path(@project), class:"btn" %>
+  </div>
+
+  <%= link_to 'All projects |', projects_path %>
+  <%= link_to 'Delete this project |', project_path(@project), method: :delete %>
+  <%= link_to 'Edit project', edit_project_path(@project) %>
+
+</div>
+
+
+<div class="text-center less-padded">
+  <p>This project was created by <%= link_to @author.first_name, profile_path(@author.id) %></p>
 </div>

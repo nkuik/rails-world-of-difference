@@ -1,0 +1,21 @@
+.padding-top-20 {
+  padding-top: 20px;
+}
+
+.padding-top-40 {
+  padding-top: 40px;
+}
+
+.margin-bottom-5 {
+  margin-bottom: 5px;
+}
+
+.giveMeEllipsis {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 4; /* number of lines to show */
+   // line-height: 1;        /* fallback */
+   // max-height: 1*4;       /* fallback */
+}
