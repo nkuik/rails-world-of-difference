@@ -1,15 +1,31 @@
-<div class="banner" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url(<%= image_path 'houses.jpg' %>)">
-  <div class="container text-center">
+<div class="wrapper" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(39, 65, 68, 0.21)), url(<%= image_path 'houses.jpg' %>)">
+  <div class="text-center">
     <h1>A World of Difference</h1>
     <h3>Volunteering in the digital age</h3>
   </div>
 </div>
 
-<div class="container text-center">
-  <h4>Contribute to your favorite causes by volunteering online</h4>
-  <%= link_to "Look at our projects", projects_path, class: "btn btn-medium text-center" %>
+
+<div class="banner-grey">
+  <div class="text-center">
+    <h4>Contribute to your favorite causes by volunteering online</h4>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4 .col-md-3">
+          <div class="card"></div>
+        </div>
+         <div class="col-xs-4 .col-md-3">
+          <div class="card"></div>
+        </div>
+         <div class="col-xs-4 .col-md-3">
+          <div class="card"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <%= link_to "Look at our projects", projects_path, class: ".btn" %>
+  </div>
 </div>
-
-
-
-
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>

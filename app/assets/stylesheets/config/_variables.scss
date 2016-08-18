@@ -6,27 +6,15 @@
 
 
 @import url("https://fonts.googleapis.com/css?family=Merriweather:400,700,700i,900|Open+Sans:400,700");
-$base-font: "Open""Helvetica", "sans-serif";
+$base-font: "Open+Sans""Helvetica", "sans-serif";
 $header-font: "Merriweather", "Times New Roman", "serif";
 
-// Local fonts (uncomment following lines)
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
 
 // Font-size and line-height
 $base-size: 16px;
 $base-height: 1.4;
 
-/* -------------------------------------
- * Colors
- * ------------------------------------- */
-// Scheme
+
 $brand-color: #D23333;
 
 $red: #f26c51;
@@ -49,38 +37,3 @@ $gray-dark:    lighten(#000, 20%);   // #333
 $gray:         lighten(#000, 33.5%); // #555
 $gray-light:   lighten(#000, 46.7%); // #777
 $gray-lighter: lighten(#000, 93.5%); // #eee
-
-$bootstrap-sass-asset-helper: false !default;
-// Cosmo 3.3.7
-// Variables
-// --------------------------------------------------
-
-
-//== Colors
-//
-//## Gray and brand colors for use across Bootstrap.
-
-$brand-primary:         #2780E3 !default;
-$brand-success:         #3FB618 !default;
-$brand-info:            #9954BB !default;
-$brand-warning:         #FF7518 !default;
-$brand-danger:          #FF0039 !default;
-
-
-//== Scaffolding
-//
-//## Settings for some of the most global styles.
-
-//** Background color for `<body>`.
-$body-bg:               #fff !default;
-//** Global text color on `<body>`.
-$text-color:            $gray-dark !default;
-
-//** Global textual link color.
-$link-color:            $brand-primary !default;
-//** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 15%) !default;
-//** Link hover decoration.
-$link-hover-decoration: underline !default;
-
-
