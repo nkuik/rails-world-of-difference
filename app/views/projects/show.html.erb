@@ -1,17 +1,29 @@
-<div class="container">
-      <h1><%= @project.name %></h1>
-      <p><%= @project.description %></p>
-    <ul>
-    <h3>Skills</h3>
-      <% @project.project_skills.each do |project_skill| %>
-      <li>
-      <%= project_skill.skill.name %>
-      <%= project_skill.level%>
-      </li>
-      <% end %>
-    </ul>
-<%= link_to 'See all projects', projects_path, class:"btn" %>
-<%= link_to 'Delete this project', project_path(@project), method: :delete, class:"btn"%>
-<%= link_to 'Edit project', edit_project_path(@project), class:"btn" %>
-<%= link_to 'Apply for this project', new_project_application_path(@project), class:"btn" %>
+<!-- display random picture -->
+<% picture_names = ["kenyaprotest", "largegroup", "malespeaker", "nepalmarch", "pakistangroup", "peoplefence", "playinggame", "refugeecamp", "smallgroup"] %>
+<% picture_name = picture_names.sample %>
+
+<div class="text-center">
+  <div class="img-container">
+    <%= image_tag( "#{picture_name}.jpg") %>
+  </div>
+
+  <div class="container">
+        <h1><%= @project.name %></h1>
+        <p><%= @project.description %></p>
+      <ul>
+      <h3>Skills</h3>
+        <% @project.project_skills.each do |project_skill| %>
+        <li>
+        <%= project_skill.skill.name %>
+        <%= project_skill.level%>
+        </li>
+        <% end %>
+      </ul>
+  <%= link_to 'See all projects', projects_path, class:"btn" %>
+  <%= link_to 'Delete this project', project_path(@project), method: :delete, class:"btn"%>
+  <%= link_to 'Edit project', edit_project_path(@project), class:"btn" %>
+  <%= link_to 'Apply for this project', new_project_application_path(@project), class:"btn" %>
+  </div>
 </div>
+
+<!-- link_to image_tag(current_user.facebook_picture_url, height: 50, width: 50) -->
