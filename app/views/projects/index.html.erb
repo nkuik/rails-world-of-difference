@@ -1,24 +1,29 @@
 <div class='text-center padded'>
   <%= link_to "Create new project", new_project_path, class: "btn btn-medium text-center" %>
 </div>
+
 <div class="container">
   <div class="row">
     <% sorted_projects = @projects.sort.reverse %>
     <% sorted_projects.each do |project|%>
       <div class="col-md-6 col-xs-12">
         <div class="card">
-            <%= image_tag("#{project_skill.skill.name.downcase.tr(' ', '')}.svg", height: 100, width: 100) %>
-        <% end %>
-          <h2><%= link_to project.name, project_path(project) %></h2>
-          <h4>Skills</h4>
-          <p><%= project.description %></p>
           <% project.project_skills.each do |project_skill| %>
-            <h3> <%= project_skill.skill.name %></h3>
-            <%= project_skill.level%>
+            <%= image_tag("#{project_skill.skill.name.downcase.tr(' ', '')}.svg", height: 100, width: 100) %>
           <% end %>
+          <h2><%= link_to project.name, project_path(project) %></h2>
+          <p><%= project.description %></p>
+          <h4>Skill</h4>
+          <% project.project_skills.each do |project_skill| %>
+            <h6> <%= project_skill.skill.name %></h6>
+          <% end %>
+          <h6>Time</h6>
+          <h6>Location</h6>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+
+
 
