@@ -18,6 +18,8 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'faker'
+gem 'ckeditor'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'binding_of_caller'
