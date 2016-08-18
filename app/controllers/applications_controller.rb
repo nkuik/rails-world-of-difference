@@ -1,6 +1,6 @@
 class ApplicationsController < ApplicationController
   def index
-    @applications = Application.all
+    @applications = Application.where(project_id: params[:project_id])
   end
 
   def show
@@ -9,13 +9,13 @@ class ApplicationsController < ApplicationController
   end
 
   def new
-    @application  = Application.new
+    @application  = current_user.applications.build
   end
 
   def create
-    @application  = Application.new(application_params)
+    @application  = current_user.applications.build(application_params.merge(project_id: params[:project_id]))
     if @application.save
-      redirect_to application_path(@application)
+      redirect_to project_applications_path
     else
       @errors = @application.errors.full_messages
       render :new
@@ -40,7 +40,7 @@ class ApplicationsController < ApplicationController
   private
 
   def application_params
-    params.require(:application).permit(:content, :accepted)
+    params.require(:application).permit(:content, :accepted, :project_id, :user_id)
   end
 
 end
