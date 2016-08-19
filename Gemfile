@@ -21,6 +21,8 @@ gem 'faker'
 gem 'ckeditor'
 gem 'mini_magick'
 gem 'cloudinary', '1.1.0'
+gem 'carrierwave'
+
 
 group :development, :test do
   gem 'binding_of_caller'

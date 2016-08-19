@@ -2,7 +2,11 @@
 <div class="container text-center">
 
   <h2><%= @user.first_name %>'s Profile</h2>
-  <%= image_tag("http://placehold.it/400x400") %>
+  <div class="text-center ">
+      <% if user_signed_in? && current_user.facebook_picture_url %>
+            <b><%= link_to cl_image_tag(current_user.facebook_picture_url, height: 200, width: 200, crop: :thumb, gravity: :face), edit_profile_path(current_user), class:"navbar-wagon-item navbar-wagon-link" if current_user.present? %></b>
+          <% end %>
+  </div>
   <h3><%= @user.first_name %> <%=@user.last_name%></h3>
   <p><%= @user.email %></p>
 

@@ -1,5 +1,9 @@
 
-<%= form_for @user, url: profile_path, class: '', id: '' do |f| %>
+<div class="container">
+<div class="form-group">
+ <div class="wrapper-gray">
+<h1 class="text-center padding-top-40">Edit profile</h1>
+<%= form_for @user, url: profile_path, class: '', id: '', html: { style: "width: 400px", class: "center-block padding-top-20" } do |f| %>
   <% if @errors.present? %>
     <ul>
       <% @errors.each do |error| %>
@@ -7,18 +11,30 @@
       <% end %>
     </ul>
   <% end %>
-  <ul>
+  <div class="text-center ">
+    <% if user_signed_in? && current_user.facebook_picture_url %>
+          <b><%= link_to cl_image_tag(current_user.facebook_picture_url, height: 200, width: 200, crop: :thumb, gravity: :face), edit_profile_path(current_user), class:"navbar-wagon-item navbar-wagon-link" if current_user.present? %></b>
+        <% end %>
+  </div>
+
+rails g migration AddCvToUser cv:string
+rails g migration AddPhotoToUser cv:string
+
+  <br><br>
+  <%= f.file_field :facebook_picture_url, class:"btn btn-primary" %>
+  <%= f.hidden_field :facebook_picture_url_cache %>
+  <br>
   <%= f.label :first_name, 'First name' %>
-  <%= f.text_field :first_name, class: 'text' %>
+  <%= f.text_field :first_name, class: 'text form-control' %>
   <br>
   <%= f.label :last_name, 'Last name' %>
-  <%= f.text_field :last_name, class: 'text' %>
+  <%= f.text_field :last_name, class: 'text form-control' %>
   <br>
   <%= f.label :email, 'Email' %>
-  <%= f.text_field :email, class: 'text' %>
-  </ul>
+  <%= f.text_field :email, class: 'text form-control' %>
 
-  <ul>
+
+
   <h3>Select your skills</h3>
 <% if @user.skill_users.last.new_record? %>
     <% 2.times do %>
@@ -30,14 +46,19 @@
         <% end %>
     <% end %>
   <% else%>
-   <li> <%= f.fields_for :skill_users do |ff| %>
+     <%= f.fields_for :skill_users do |ff| %>
         <%= ff.hidden_field :id %>
-        <%= ff.select :skill_id, @skills, { :prompt => "Please select"}%>
-        <%= ff.select :level, (0..10)%>
+        <%= ff.select :skill_id, @skills, { :prompt => "Please select"}, class: 'form-control'%>
+        <%= ff.select :level, (0..10),{ :prompt => "Please select"}, class:'form-control'%>
+        <br>
       <% end %>
   <% end %>
-</ul>
 
+
+        <div class="form-actions padding-bottom-40 padding-top-20">
   <%= f.submit 'Update your profile', class:"btn btn-primary" %>
+    </div>
 <% end %>
-
+</div>
+</div>
+</div>
