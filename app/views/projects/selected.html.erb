@@ -1,40 +1,40 @@
 <% cities = ["Nairobi", "Karachi", "Delhi", "New York City", "Mumbai", "Sao Paulo", "Copenhagen", "Lahore", "Perth", "Jelling", "Paris", "Vilnius"] %>
 <% times = ["60 hours", "20 hours", "10 hours", "30 hours", "5 hours"] %>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="text-center">
-      <h1>Our projects</h1>
+<div class="container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="text-center">
+        <h1>Our projects</h1>
+      </div>
     </div>
   </div>
-</div>
 
-
-
-<div class="container">
-  <div class="row">
-    <% @selected_projects.each do |project|%>
-      <div class="col-md-6 col-xs-12">
-        <div class="card text-center">
-          <% project.project_skills.each do |project_skill| %>
-            <%= image_tag("#{project_skill.skill.name.downcase.tr(' ', '')}.svg", height: 100, width: 100) %>
-          <% end %>
-          <h2><%= link_to project.name, project_path(project) %></h2>
-          <p class="less-padded"><%= project.description %></p>
-          <h4>Skill needed</h4>
-          <% project.project_skills.each do |project_skill| %>
-            <h6> <%= project_skill.skill.name %></h6>
-          <% end %>
-          <div class="less-padded">
-            <h5>Location: <%= "#{cities.sample}"%></h5>
-            <h5>Time: <%= "#{times.sample}"%></h5>
+  <div class="container less-padded">
+    <div class="row">
+      <% @selected_projects.each do |project|%>
+        <div class="col-md-6 col-xs-12">
+          <div class="card text-center">
+            <% project.project_skills.each do |project_skill| %>
+              <%= image_tag("#{project_skill.skill.name.downcase.tr(' ', '')}.svg", height: 100, width: 100) %>
+            <% end %>
+            <h2><%= link_to project.name, project_path(project) %></h2>
+            <p class="less-padded"><%= project.description %></p>
+            <h4>Skill needed</h4>
+            <% project.project_skills.each do |project_skill| %>
+              <h6> <%= project_skill.skill.name %></h6>
+            <% end %>
+            <div class="less-padded">
+              <h5>Location: <%= "#{cities.sample}"%></h5>
+              <h5>Time: <%= "#{times.sample}"%></h5>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
 
-<div class='text-center padded'>
-  <%= link_to "Start contributing", new_project_path, class: "btn btn-medium text-center" %>
+  <div class='text-center padded'>
+    <%= link_to "Start contributing", new_profile_path, class: "btn btn-medium text-center" %>
+  </div>
 </div>

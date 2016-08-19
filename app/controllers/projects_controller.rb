@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def selected
-    @selected_projects = Project.last(12)
+    @selected_projects = Project.last(12).reverse
   end
 
   def index
