@@ -6,7 +6,7 @@
 
   # Choose what kind of storage to use for this uploader:
 
-class PhotoUploader < CarrierWave::Uploader::Base
+class User::PhotoUploader < CarrierWave::Uploader::Base
 
   include Cloudinary::CarrierWave
 

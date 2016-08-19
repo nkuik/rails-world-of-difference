@@ -6,7 +6,12 @@
       <% if user_signed_in? && current_user.facebook_picture_url %>
             <b><%= link_to cl_image_tag(current_user.facebook_picture_url, height: 200, width: 200, crop: :thumb, gravity: :face), edit_profile_path(current_user), class:"navbar-wagon-item navbar-wagon-link" if current_user.present? %></b>
           <% end %>
+
   </div>
+  <br>
+  <% if user_signed_in? && current_user.cv %>
+            <b><%= link_to current_user.cv %></b>
+          <% end %>
   <h3><%= @user.first_name %> <%=@user.last_name%></h3>
   <p><%= @user.email %></p>
 
