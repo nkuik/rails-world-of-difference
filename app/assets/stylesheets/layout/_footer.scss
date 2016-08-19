@@ -16,9 +16,10 @@
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: $gray-lighter;
+  background-color: #c3ccc8;
   width: 100%;
-  height: 80px;
+  height: 73px;
+  margin-top: 60px;
 }
 
 .footer-left-icons {
@@ -28,8 +29,11 @@
 }
 
 .footer-right-text {
-  color: white;
+  color: $bright-red;
   position: absolute;
   top: 20px;
   right: 40px;
+  p {
+    text-decoration: bold
+  }
 }
