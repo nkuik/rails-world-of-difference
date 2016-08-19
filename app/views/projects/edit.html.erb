@@ -1,26 +1,43 @@
 <div class="container less-padded">
-  <%= form_for @project, class: '', id: '' do |f| %>
-    <% if @errors.present? %>
-      <ul>
-        <% @errors.each do |error| %>
-          <li><%= error %></li>
-        <% end %>
-      </ul>
-    <% end %>
-
-    <%= f.label :name, 'Name' %>
-    <%= f.text_field :name, class: 'text' %>
-    <%= f.label :description, 'Description' %>
-    <%= f.text_field :description, class: 'text' %>
-    <%= f.submit 'Update a project', class:"btn btn-primary" %>
-
-
-    <%= f.fields_for :project_skills do |ff| %>
-      <%= ff.hidden_field :id %>
-      <%= ff.select :skill_id, @skills %>
-      <%= ff.select :level, (0..10)%>
-    <% end %>
-  <% end %>
+  <h1 class="padding-top-40 text-center">Edit Project</h1>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-7">
+      <%= form_for @project, class: '', id: '' do |f| %>
+        <% if @errors.present? %>
+        <ul>
+          <% @errors.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+        <% end %>
+      <div class="form-group">
+      <h4 class="padding-top-20">Name</h4>
+      <%= f.text_field :name, class: 'text form-control' %>
+      <h4 class="padding-top-20">Description</h4>
+      <%= f.cktext_area :description, value: 'Describe the project', class: 'text' %>
+      </div>
+    </div>
+  <div class="col-xs-12 col-md-4 col-md-offset-1">
+  <h3 class="padding-top-40">Requirements</h3>
+    <div class="form-group">
+      <% 1.times do %>
+        <%= f.simple_fields_for :project_skills do |ff| %>
+        <h4 class="padding-top-20 margin-bottom-5">Project skill</h4>
+        <%= ff.select :skill_id, @skills, { :prompt => "Please select"}, class: 'form-control'%>
+          <h4 class="padding-top-20 margin-bottom-5">Skill level</h4>
+          <%= ff.select :level, (0..10),{ :prompt => "Please select"}, class:'form-control' %>
+        <% end %>
+      <% end %>
+    <div class="padding-top-20">
+    <%= f.submit 'Edit project', class:"btn btn-primary" %>
+    </div>
+
+  <% end %>
+    </div>
+    </div>
+</div>
+</div>
 

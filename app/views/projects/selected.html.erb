@@ -19,8 +19,10 @@
               <%= image_tag("#{project_skill.skill.name.downcase.tr(' ', '')}.svg", height: 100, width: 100) %>
             <% end %>
             <h2><%= link_to project.name, project_path(project) %></h2>
-            <p class="less-padded"><%= project.description %></p>
-            <h4>Skill needed</h4>
+            <p><%= simple_format(project.description[0..80] + "...") %></p>
+            <div>
+              <h4>Skill needed</h4>
+            </div>
             <% project.project_skills.each do |project_skill| %>
               <h6> <%= project_skill.skill.name %></h6>
             <% end %>
