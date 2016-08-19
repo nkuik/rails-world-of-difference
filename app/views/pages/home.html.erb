@@ -9,7 +9,7 @@
 <% times = ["60 hours", "20 hours", "10 hours", "30 hours", "5 hours"] %>
 
 <div class="container">
-  <h4 class="text-center less-padded">Projects being worked on right now</h4>
+  <h4 class="text-center">Projects being worked on right now</h4>
   <div class="less-padded">
       <div class="row">
         <% @selected_projects.each do |project|%>
@@ -34,12 +34,16 @@
       </div>
     </div>
 
-    <h4 class="text-center less-padded">Contribute to your favorite causes by volunteering online</h4>
+  <div class="banner-grey">
+    <div class="text-center">
+      <h4>Contribute to your favorite causes by volunteering online</h4>
+        <%= link_to projects_selected_path do %>
 
-    <%= link_to projects_selected_path do %>
-      <div class="btn">
-        <h5 class="text-center">Browse our projects</h5>
-      </div>
-    <% end %>
+            <div class="btn">
+              <h5>Browse our projects</h5>
+            </div>
+
+        <% end %>
+    </div>
   </div>
 </div>

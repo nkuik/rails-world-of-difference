@@ -6,19 +6,23 @@
   <div class="row">
     <% sorted_projects = @projects.sort.reverse %>
     <% sorted_projects.each do |project|%>
-      <div class="col-md-6 col-xs-12">
+      <div class="col-xs-4 .col-md-3">
         <div class="card text-center">
+
+
           <% project.project_skills.each do |project_skill| %>
-            <%= image_tag("#{project_skill.skill.name.downcase.tr(' ', '')}.svg", height: 100, width: 100) %>
+            <%= image_tag("#{project_skill.skill.name.downcase.tr(' ', '')}.svg", height: 124, width: 124) %>
           <% end %>
-          <h2><%= link_to project.name, project_path(project) %></h2>
+          <h4><%= link_to project.name, project_path(project) %></h4>
+          <div class="text-left">
+          <p><strong>Skill:</strong>
+          <% project.project_skills.each do |project_skill| %>
+            <%= project_skill.skill.name %></p>
+          <% end %>
+          <p><strong> Time:</strong> Estimated hours</p>
+          <p>On location or possible to work remote</p>
           <p><%= simple_format(project.description[0..80] + "...") %></p>
-          <h4>Skill</h4>
-          <% project.project_skills.each do |project_skill| %>
-            <h6> <%= project_skill.skill.name %></h6>
-          <% end %>
-          <h6>Time</h6>
-          <h6>Location</h6>
+          </div>
         </div>
       </div>
     <% end %>
