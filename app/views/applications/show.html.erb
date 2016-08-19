@@ -22,8 +22,8 @@
   <h4 class="padding-top-20">Other details:</h4>
   <h5>Applied: <%=@application.created_at.strftime("%D")%></h5>
   <h5>Member since: <%=@user.created_at.strftime("%D")%></h5>
-  <h4 class="padding-top-20">Status:</h4>
-  <h5>Current status: <%=  @application.accepted? %></h5>
+  <h4 class="padding-top-20">Current Status:</h4>
+  <h5><%= @application.accepted? ? "Accepted" : "Rejected" %></h5>
     <%= form_for @application, url: project_applications_path,  class: '', id: '' do |f| %>
       <% if @errors.present? %>
         <ul>
@@ -33,8 +33,11 @@
         </ul>
       <% end %>
       <div class="form-group">
-      <%= f.label :accepted, 'select this application?' %>
+      <%= f.label :accepted, 'Choose applicant?' %>
       <%= f.check_box :accepted %>
+      <div>
+        <%= f.submit %>
+      </div>
     <% end %>
     </div>
   </div>

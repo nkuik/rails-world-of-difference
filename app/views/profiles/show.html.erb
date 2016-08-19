@@ -1,31 +1,35 @@
-<div class="container">
-      <h1>Your Profile</h1>
-        <h3><%= @user.first_name + " " + @user.last_name %></h3>
-        <p><%= @user.email %></p>
 
-      <ul>
-      <h3>Skills</h3>
-        <% @user.skill_users.each do |skill_user| %>
-        <li>
+<div class="container text-center">
+
+  <h2><%= @user.first_name %>'s Profile</h2>
+  <%= image_tag("http://placehold.it/400x400") %>
+  <h3><%= @user.first_name %> <%=@user.last_name%></h3>
+  <p><%= @user.email %></p>
+
+  <h3>Skills</h3>
+    <% @user.skill_users.each do |skill_user| %>
+      <div class="text-center less-padded">
         <%= skill_user.skill.name %>
         <%= skill_user.level%>
-        </li>
-        <% end %>
-      </ul>
-    <h3>Your projects</h3>
-     <% @user.projects.each do |project| %>
-    <%= link_to "#{project.name}", project_path(project) %>
-        <% end %>
-    <br>
-    <h3>Your applications</h3>
-    <% @user.applications.each do |application| %>
-    <%= link_to "#{application.project.name}", project_path(application) %>
-        <% end %>
+      </div>
+    <% end %>
+  <div class="text-center less-padded">
+    <h3>Projects</h3>
+      <% @user.projects.each do |project| %>
+        <%= link_to "#{project.name}", project_path(project) %>
+      <% end %>
+  </div>
+  <div class="text-center less-padded">
+    <h3>Applications</h3>
+      <% @user.applications.each do |application| %>
+        <%= link_to "#{application.project.name}", project_application_path(application.id) %>
+      <% end %>
+  </div>
 
-<br>
-<br>
+  <div class="text-center less-padded">
+    <%= link_to 'See all projects', projects_path, class:"btn" %>
+    <%= link_to 'Delete my profile', profile_path(@user), method: :delete, class:"btn"%>
+    <%= link_to 'Edit my profile', edit_profile_path(@user), class:"btn" %>
+  </div>
 
-  <%= link_to 'See all projects', projects_path, class:"btn" %>
-  <%= link_to 'Delete my profile', profile_path(@user), method: :delete, class:"btn"%>
-  <%= link_to 'Edit my profile', edit_profile_path(@user), class:"btn" %>
 </div>

@@ -1,5 +1,6 @@
   <!-- should be all on projects -->
-<div class="container">
+<div class="container padded">
+  <h2>Application</h2>
   <%= simple_form_for @application, url: project_applications_path, class: '', id: '' do |f| %>
     <% if @errors.present? %>
       <ul>
@@ -9,7 +10,7 @@
       </ul>
     <% end %>
 
-    <%= f.label :content, 'Application' %>
+
     <%= f.cktext_area :content, value: 'Why are you a good fit? describe briefly', class: 'text' %>
     <!-- also send the users information, hidden -->
     <!-- some type of upload? Anything with skills -->

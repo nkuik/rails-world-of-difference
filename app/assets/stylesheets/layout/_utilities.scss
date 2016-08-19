@@ -10,9 +10,11 @@
   padding-bottom: 5em;
 }
 
-body {
-  min-height: calc(100vh-70px);
+.less-padded {
+  padding: 10px;
 }
+
+
 
 // Backgrounds
 .bg-black {
@@ -26,4 +28,8 @@ body {
 }
 .bg-dark-blue {
   background: #3b5998;
+}
+
+.wrapper-gray {
+  background-color: $gray-lighter;
 }
