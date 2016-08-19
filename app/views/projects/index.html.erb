@@ -1,8 +1,8 @@
-<div class='text-center padded'>
-  <%= link_to "Create new project", new_project_path, class: "btn btn-medium text-center" %>
+<div class='text-center less-padded'>
+  <%= link_to "Create a new project", new_project_path, class: "btn btn-medium text-center" %>
 </div>
 
-<div class="container">
+<div class="container less-padded">
   <div class="row">
     <% sorted_projects = @projects.sort.reverse %>
     <% sorted_projects.each do |project|%>
@@ -21,12 +21,8 @@
           <% end %>
           <p><strong> Time:</strong> Estimated hours</p>
           <p>On location or possible to work remote</p>
-          <p><%= simple_format(project.description) %></p>
+          <p><%= simple_format(project.description[0..80] + "...") %></p>
           </div>
-
-
-
-
         </div>
       </div>
     <% end %>

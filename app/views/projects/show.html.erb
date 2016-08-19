@@ -1,7 +1,7 @@
 <% picture_names = ["kenyaprotest", "largegroup", "malespeaker", "nepalmarch", "pakistangroup", "peoplefence", "playinggame", "refugeecamp", "smallgroup"] %>
 <% picture_name = picture_names.sample %>
 
-<div class="container less-padded text-center">
+<div class="container text-center">
   <div class="img-container img-responsive">
     <%= image_tag( "#{picture_name}.jpg") %>
   </div>
@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <div class="container less-padded text-center">
+  <div class="less-padded">
     <%= link_to 'See project applicants', project_applications_path(@project), class:"btn" %>
     <%= link_to 'Apply for this project', new_project_application_path(@project), class:"btn" %>
   </div>

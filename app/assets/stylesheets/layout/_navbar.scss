@@ -53,7 +53,16 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $bright-red;
+  text-decoration: none;
+}
+
+.navbar-facebook-link {
+  color: #3b5998;
+  font-size: 14px;
+}
+.navbar-facebook-link:hover {
+  color: #3b5998;
   text-decoration: none;
 }
 

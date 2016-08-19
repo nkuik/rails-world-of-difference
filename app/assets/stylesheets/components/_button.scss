@@ -4,13 +4,28 @@
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
-  background: $orange;
-  transition: background 0.4s ease;
+  background: $bright-red;
+  transition: background 0.3s ease;
 }
 .btn:hover {
-  color: $bright-red;
-  background: $orange;
-  opacity: .85;
+  color: white;
+  background: $bright-red;
+  text-decoration: none;
+  opacity: .8;
+}
+
+.btn-facebook {
+  color: white;
+  border-radius: 10px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #3b5998;
+  transition: background 0.3s ease;
+}
+.btn-facebook:hover {
+  color: white;
+  opacity: .8;
   text-decoration: none;
 }
 

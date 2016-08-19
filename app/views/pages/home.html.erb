@@ -5,15 +5,45 @@
   </div>
 </div>
 
-<div class="banner-grey">
-  <div class="text-center">
-    <h4>Contribute to your favorite causes by volunteering online</h4>
-          <%= link_to projects_selected_path do %>
+<% cities = ["Nairobi", "Karachi", "Delhi", "New York City", "Mumbai", "Sao Paulo", "Copenhagen", "Lahore", "Perth", "Jelling", "Paris", "Vilnius"] %>
+<% times = ["60 hours", "20 hours", "10 hours", "30 hours", "5 hours"] %>
 
-              <div class="btn">
-                <h5>Browse our projects</h5>
+<div class="container">
+  <h4 class="text-center">Projects being worked on right now</h4>
+  <div class="less-padded">
+      <div class="row">
+        <% @selected_projects.each do |project|%>
+          <div class="col-xs-4 .col-md-3">
+            <div class="card text-center">
+              <% project.project_skills.each do |project_skill| %>
+                <%= image_tag("#{project_skill.skill.name.downcase.tr(' ', '')}.svg", height: 100, width: 100) %>
+              <% end %>
+              <h2><%= link_to project.name, project_path(project) %></h2>
+              <p><%= simple_format(project.description[0..80] + "...") %></p>
+              <h4>Skill needed</h4>
+              <% project.project_skills.each do |project_skill| %>
+                <h6> <%= project_skill.skill.name %></h6>
+              <% end %>
+              <div>
+                <h5>Location: <%= "#{cities.sample}"%></h5>
+                <h5>Time: <%= "#{times.sample}"%></h5>
               </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-          <% end %>
-</div>
+  <div class="banner-grey">
+    <div class="text-center">
+      <h4>Contribute to your favorite causes by volunteering online</h4>
+        <%= link_to projects_selected_path do %>
+
+            <div class="btn">
+              <h5>Browse our projects</h5>
+            </div>
+
+        <% end %>
+    </div>
+  </div>
 </div>
