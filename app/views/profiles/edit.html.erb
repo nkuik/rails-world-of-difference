@@ -1,5 +1,5 @@
-<div class="container less-padded">
-  <%= form_for @user, url: profile_path, class: '', id: '' do |f| %>
+<div class="container less-padded text-center">
+  <%= form_for @user, url: profile_path, style: 'width: 400px', class: '', id: '' do |f| %>
     <% if @errors.present? %>
       <ul>
         <% @errors.each do |error| %>
