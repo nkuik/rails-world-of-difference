@@ -1,16 +1,17 @@
 .btn {
   color: white;
+  border-radius: 10px;
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
   background: $orange;
-  transition: background 0.3s ease;
+  transition: background 0.4s ease;
 }
 .btn:hover {
-  opacity: 1;
-  background: $grey;
+  color: $bright-red;
+  background: $orange;
+  opacity: .85;
   text-decoration: none;
-  color: white;
 }
 
 .btn-facebook {

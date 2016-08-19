@@ -13,15 +13,16 @@
       </div>
     <% end %>
   <div class="text-center less-padded">
-    <h3>Projects</h3>
-      <% @user.projects.each do |project| %>
-        <%= link_to "#{project.name}", project_path(project) %>
-      <% end %>
+    <h3>My Projects</h3>
+    <% current_user.authored_projects.each do |project| %>
+      <%= link_to "| #{project.name} |", project_path(project.id) %>
+    <% end %>
+
   </div>
   <div class="text-center less-padded">
-    <h3>Applications</h3>
+    <h3>My Applications</h3>
       <% @user.applications.each do |application| %>
-        <%= link_to "#{application.project.name}", project_application_path(application.id) %>
+        <%= link_to "| #{application.project.name} |", project_application_path(application.id) %>
       <% end %>
   </div>
 
