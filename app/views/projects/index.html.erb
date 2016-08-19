@@ -1,3 +1,7 @@
+<% cities = ["Nairobi", "Karachi", "Delhi", "New York City", "Mumbai", "Sao Paulo", "Copenhagen", "Lahore", "Perth", "Jelling", "Paris", "Vilnius"] %>
+<% times = ["60 hours", "20 hours", "10 hours", "30 hours", "5 hours"] %>
+
+
 <div class='text-center less-padded'>
   <%= link_to "Create a new project", new_project_path, class: "btn btn-medium text-center" %>
 </div>
@@ -8,8 +12,6 @@
     <% sorted_projects.each do |project|%>
       <div class="col-xs-4 .col-md-3">
         <div class="card text-center">
-
-
           <% project.project_skills.each do |project_skill| %>
             <%= image_tag("#{project_skill.skill.name.downcase.tr(' ', '')}.svg", height: 124, width: 124) %>
           <% end %>
@@ -19,8 +21,8 @@
           <% project.project_skills.each do |project_skill| %>
             <%= project_skill.skill.name %></p>
           <% end %>
-          <p><strong> Time:</strong> Estimated hours</p>
-          <p>On location or possible to work remote</p>
+          <p><strong> Time: </strong><%= times.sample %></p>
+          <p><%= cities.sample %></p>
           <p><%= simple_format(project.description[0..80] + "...") %></p>
           </div>
         </div>
