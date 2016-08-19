@@ -2,11 +2,20 @@
 .card {
   background-size: cover;
   background-color: $beige;
-  padding: 8px 15px;
-  border-top: solid 10px $orange;
+  padding: 2px 25px;
+  border-top: solid 10px $blue;
   border-radius: 2px;
-  height: 400px;
-  margin-bottom: 10px;
+  height: 425px;
+  margin-bottom: 20px;
+    box-shadow: 4px 4px 4px rgba(220,220,220,.5);
+
+  h4 {
+    line-height: 115%;
+    padding-bottom: 0;
+      a:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .card-user {

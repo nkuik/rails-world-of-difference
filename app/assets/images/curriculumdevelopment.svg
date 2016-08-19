@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><circle cx="18.869" cy="28.494" r="12.767"></circle><path d="M48.443,72.14c1.143,0,2.301-0.436,3.173-1.309L68.06,54.394c1.745-1.744,1.752-4.574,0.007-6.318  c-1.745-1.746-4.573-1.746-6.319,0L48.471,61.147c0,0-14.188-16.147-17.826-16.147c-3.638,0-21.033,0-21.033,0  C5.4,45,1,48.857,1,53.07V85h33V60.665l10.739,10.166C45.612,71.704,47.3,72.14,48.443,72.14z"></path><polygon points="44,16 44,49.221 47.983,53.428 51,50.421 51,24 92,24 92,78 44,78 44,85 99,85 99,16 "></polygon></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="300px" height="237px" viewBox="0 137.5 300 237" enable-background="new 0 137.5 300 237" xml:space="preserve">
+<circle cx="56.607" cy="185.482" r="38.301"/>
+<path d="M145.329,316.42c3.429,0,6.903-1.309,9.519-3.927l49.332-49.312c5.235-5.231,5.256-13.722,0.021-18.954
+	c-5.235-5.238-13.719-5.238-18.957,0l-39.831,39.213c0,0-42.564-48.441-53.478-48.441s-63.099,0-63.099,0
+	C16.2,235,3,246.571,3,259.21V355h99v-73.005l32.217,30.498C136.836,315.111,141.9,316.42,145.329,316.42z"/>
+<polygon points="132,148 132,247.663 143.949,260.284 153,251.264 153,172 276,172 276,334 132,334 132,355 297,355 297,148 "/>
+</svg>
